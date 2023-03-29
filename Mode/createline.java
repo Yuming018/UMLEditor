@@ -74,6 +74,9 @@ public class createline extends mode {
 					idx_1 = idx;
 				}
 				else if (target == "target"){
+					if (shape1 == shape){
+						return null;
+					}
 					shape2 = shape;
 					idx_2 = idx;
 				}

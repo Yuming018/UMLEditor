@@ -51,6 +51,12 @@ public class select extends mode {
 	}
 	
 	public void mouseReleased(MouseEvent e) {
+		for(int i=0; i < shapes.size(); i++){
+			shape shape = shapes.get(i);
+			if(canvas.checkSelectedArea(shape)){
+				shape.group_selected = true;
+			}
+		}
 		canvas.SelectedArea = new Rectangle();
 		canvas.repaint();
 	}

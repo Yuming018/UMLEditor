@@ -140,7 +140,7 @@ public class Canvas extends JPanel  {
 		}
 	}
 
-	private boolean checkSelectedArea(shape shape) {
+	public boolean checkSelectedArea(shape shape) {
 		Point upperleft = new Point(shape.getx1(), shape.gety1());
 		Point lowerright = new Point(shape.getx2(), shape.gety2());
 		if (SelectedArea.contains(upperleft) && SelectedArea.contains(lowerright)) {
@@ -159,11 +159,8 @@ public class Canvas extends JPanel  {
 		for (int i = shapes.size() - 1; i >= 0; i--) {
 			shape shape = shapes.get(i);
 			shape.draw(g);
-			if (!SelectedArea.isEmpty() && checkSelectedArea(shape)) {
-				shape.group_selected = true;
-			}
-			if(shape.group_selected){
-				shape.showport(g);
+			if (shape.group_selected) {
+				shape.showport(g);	
 			}
 		}
 
